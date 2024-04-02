@@ -14,7 +14,7 @@ import Pay from '../../iconsImages/payment.png'
 
 function Maincomponent() {
 
-  const [toggle, setToggle] = useState(null);
+  const [toggle, setToggle] = useState(0);
 
 
   const toggleButton = (index) => {
@@ -58,12 +58,12 @@ function Maincomponent() {
   ]
 
   return (
-    <div className='container mx-auto p-[5px] w-[800px]'>
+    <div className='mx-auto p-[5px] w-[700px] mt-5'>
       <div className='bg-[#1C181D] text-white flex justify-between rounded-[8px] py-[12px] px-[16px]'>
-        <p>Extend your trial for $1/month for 3 months on select plans.</p>
-        <div className='flex gap-1 items-center'>
-          <button>Select a plan</button>
-          <RxCross1 className='text-[20px]' />
+        <p className='text-[15px]'>Extend your trial for $1/month for 3 months on select plans.</p>
+        <div className='flex gap-2 items-center'>
+          <button className='bg-[#eaeaea] text-black px-[5px] text-[14px] rounded-[5px] '>Select a plan</button>
+          <RxCross1 className='text-[16px]' />
         </div>
       </div>
       <div className='rounded-[8px] py-[12px] px-[16px] bg-[#FFFFFF]'>
@@ -84,7 +84,7 @@ function Maincomponent() {
             return (
               <ul key={index}>
                 <li onClick={() => toggleButton(index)}>
-                  <div className={`py-3 px-1 ${toggle === index ? 'bg-[#f4f4f4]' : 'null'}`}>
+                  <div className={`py-3 px-2 ${toggle === index ? 'bg-[#f4f4f4] rounded-[8px]' : 'null'}`}>
                     <div className='flex items-center gap-2'>
                       <Image /> 
                       <p className={`text-[14px] font-[400] ${toggle === index ? 'font-[550]' : ''}`} >{listItems.headText}</p>
@@ -109,6 +109,7 @@ function Maincomponent() {
         </div>
       </div>
     </div>
+    
   )
 }
 
